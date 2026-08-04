@@ -1,12 +1,12 @@
 import {useState} from "react";
 import { getPlanetFacts } from "../services/factsApi";
-import { getImage } from "../services/imagesApi";
+import  getImage  from "../services/imagesApi";
 
 function SearchPlanet() {
     const [searchTerm, setSearchTerm] = useState("");
     const [facts, setFacts] = useState(null);
     const [image, setImage] = useState(null);
-    const [loading, setLoading] = useState(false);x
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     async function handleSearch(e) {
@@ -34,7 +34,9 @@ function SearchPlanet() {
         <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         <button type="submit">Search</button>
     </form>
-    
+    {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {facts && <h2>{facts.englishName}</h2>}
     
     </>
    );
