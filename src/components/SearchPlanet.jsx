@@ -28,4 +28,18 @@ function SearchPlanet() {
       setLoading(false);
     }
   }
+   return (
+    <>
+    <form onSubmit={handleSearch}>
+        <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+        <button type="submit">Search</button>
+    </form>
+    
+    
+    </>
+   );
+
+
 }
+
+export default SearchPlanet;
