@@ -4,11 +4,13 @@ const router = express.Router();
 
 router.get("/:name", async (req, res) => {
   try {
+    
     const solarRes = await fetch(
-      `https://api.le-systeme-solaire.net/rest/bodies/${req.params.name}`,
+      `http://api.le-systeme-solaire.net/rest/bodies/${req.params.name}`,
       { headers: { Authorization: `Bearer ${process.env.SS_KEY}` } }
     );
     if (!solarRes.ok) {
+        console.log(solarRes)
       return res.status(solarRes.status).json({ message: "Planet not found" });
     }
     const data = await solarRes.json();
