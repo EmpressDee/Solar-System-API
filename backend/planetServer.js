@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors());
-app.use("/api/planet", planetRoutes);
+app.use("/api/planet", planetRoute);
 
 const PORT = process.env.PORT || 5000;
 
