@@ -1,7 +1,6 @@
 
 
 
-
 export default async function getImage (searchTerm) {
 
   try {
