@@ -19,7 +19,7 @@ function SearchPlanet() {
         getPlanetFacts(searchTerm),
         getImage(searchTerm),
       ]);
-
+      console.log(factsData);
       setFacts(factsData);
       setImage(imageData);
     } catch (err) {
