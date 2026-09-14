@@ -1,14 +1,18 @@
 import express from "express";
+// import dotenv from "dotenv";
 
 const router = express.Router();
+// dotenv.config();
 
 router.get("/:name", async (req, res) => {
   try {
     
     const solarRes = await fetch(
-      `http://api.le-systeme-solaire.net/rest/bodies/${req.params.name}`,
+      
+      `https://api.le-systeme-solaire.net/rest.php/bodies/${req.params.name}`,
       { headers: { Authorization: `Bearer ${process.env.SS_KEY}` } }
     );
+    
     if (!solarRes.ok) {
         console.log(solarRes)
       return res.status(solarRes.status).json({ message: "Planet not found" });
