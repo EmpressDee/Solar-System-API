@@ -30,7 +30,7 @@ function SearchPlanet() {
   }
 
   // gets first image or null
-  const imageUrl = image?.collection?.items?.[0]?.links?.[0]?.href ?? null;
+  const imageUrl = image?.collection?.items?.[2]?.links?.[2]?.href ?? null;
 
   return (
     <div className="planet-search">
@@ -57,6 +57,7 @@ function SearchPlanet() {
     
         <div className="planet-facts"> 
         <h2>{facts.englishName}</h2>
+        {/* <p>{facts.moons}</p> */}
     </div>
     </div>
     </div>
